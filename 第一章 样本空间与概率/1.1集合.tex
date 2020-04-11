@@ -1,0 +1,57 @@
+\documentclass[UTF8]{article}
+\usepackage{ctex}
+\begin{document}
+    \section{}
+        令事件A为掷出偶数，即$A = \{2, 4, 6\}$
+        
+        令B表示点数大于3的事件，即$B = \{4, 5, 6\}$
+
+        那么：
+
+        $A^c = \{1, 3, 5\}, B^c = \{1, 2, 3\}$
+
+        $A \cup B = \{2, 4, 5, 6\}, A \cap B = \{4, 6\}$
+
+        所以$(A \cup B)^c = \{1, 3\} = A^c \cap B^c$
+        
+        $(A \cap B)^c = \{1, 2, 3, 5\} = A^c \cup B^c$
+    \section{}
+        \subsection{}
+            设全集为S，由代数性质：
+            
+            $\begin{array}{lcr}
+                A^c & = \\
+            A^c \cap S & = \\
+            A^c \cap (B \cup B^c) & = \\
+            (A^c \cap B) \cup (A^c \cap B^c)
+            \end{array}$
+
+            对$B^c$的结论同理，证毕。
+
+            也可以通过韦恩图进行证明：任意一个集合中的元素，要么属于$B$，要么属于$B^c$。上式就是全概率定理的特殊情况。
+        \subsection{}
+            设全集为S，由德摩根律：
+
+            $\begin{array}{lcr}
+                (A \cap B)^c & = \\
+                A^c \cup B^c & = \\
+                (A^c \cap S) \cup (B^c \cap S) & = \\
+                (A^c \cap B) \cup  (A^c \cap B^c) \cup (A^c \cap B^c) \cup (A \cap B^c) & = \\
+                (A^c \cap B) \cup  (A^c \cap B^c) \cup (A \cap B^c)
+            \end{array}$
+
+            证毕。
+
+            也可以通过韦恩图进行证明：A交B的补集中，只有三种可能：属于A但不属于B、属于B但不属于A、既不属于A也不属于B，整理即可得到上式。
+        
+        \subsection{}
+            令事件A为掷出偶数，即$A = \{2, 4, 6\}$
+        
+            令B表示点数大于3的事件，即$B = \{1, 2, 3\}$
+
+            则$(A \cap B)^c = \{1, 3, 4, 5, 6\}$
+
+            $(A^c \cap B) \cup  (A^c \cap B^c) \cup (A \cap B^c) = \{1, 3\} \cup \{5\} \cup \{4, 6\} = \{1, 3, 4, 5, 6\}$
+
+            所以$(A \cap B)^c = (A^c \cap B) \cup  (A^c \cap B^c) \cup (A \cap B^c)$。
+\end{document}
