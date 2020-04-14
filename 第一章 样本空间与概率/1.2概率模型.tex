@@ -38,4 +38,48 @@
         所以对于$(P_1 + P_3 - 2P_1P_3)$，这个值永远非负，故$P_2$最大时整个式子最大，且与$P_1,P_3$的顺序无关。
 
         证毕。
+    \section*{9.}
+        \subsection*{(a)}
+            $P(A) = P(A \cap \Omega) = P(A \cap \bigcup_{i = 1}^nS_i) = P(\bigcup_{i = 1}^n(A \cap S_i))$
+
+            由于$\{S_1, S_2, ..., S_n\}$互不相容，故$P(A) = \sum_{i = 1}^nP(A \cap S_i)$
+
+            证毕。
+        \subsection*{(b)}
+            不难发现，$B^c \cap C^c, B \cap C^c, B^c \cap C, B \cap C$互不相容
+
+            所以$P(A) = P(A \cap B^c \cap C^c) + P(A \cap B \cap C^c) + P(A \cap B^c \cap C) + P(A \cap B \cap C)$
+
+            由容斥原理，$P(A) = P(A \cap B^c \cap C^c) + P(A \cap B) + P(A \cap C) - P(A \cap B \cap C)$
+
+            证毕。
+    \section*{10.}
+        $P(A) + P(B) - 2P(A \cap B) = P(A \cup B) - P(A \cap B) = P((A \cap B^c) \cup (A^c \cap B))$
+
+        证毕。
+    \section*{11.}
+        \subsection*{(a)}
+            原文给出的等式应为$P(A \cup B) = P(A) + P(B) - P(A \cap B)$，似乎存在笔误。
+        \subsection*{(b)}
+            略。
+    \section*{12.}
+        \subsection*{(a)}
+            略。
+        \subsection*{(b)}
+            当n = 3时，由(a)可知等式成立。
+
+            假定n = m时等式依然成立，那么当n = m + 1时：
+
+            $P(\bigcup_{k = 1}^{m + 1}) = P(A_{m + 1} \cup \bigcup_{k = 1}^m A_k) = 
+            P(A_{m + 1}) + \sum_{i \in S_1}P(A_i) 
+            - \sum_{(i_1, i_2) \in S_2}P(A_{i_1} \cap A_{i_2}) + ... + (-1)^{n - 1}P(\bigcap_{k = 1}^{n}A_k) -
+            P(A_{m + 1} \cap \bigcup_{k = 1}^m A_k)$
+
+            整理上式可得：
+
+            $P(\bigcup_{k = 1}^{m + 1}) = \sum_{i \in S_1}P(A_i) - \sum_{(i_1, i_2) \in S_2}P(A_{i_1} \cap A_{i_2}) + ... + (-1)^nP(\bigcap_{k = 1}^{m + 1}A_k)$
+
+            归纳完毕。
+    \section*{13.}
+        略。
 \end{document}
