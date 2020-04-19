@@ -1,0 +1,38 @@
+\documentclass[UTF8]{report}
+\usepackage{ctex}
+
+\begin{document}
+    \section*{30.}
+        如果两头猎犬均选择了正确方向，概率为$p^2$；
+        如果只有一头选择了正确方向，概率为$2p(1 - p)$，此时随机选择到正确方向的概率是$p(1 - p)$，
+        故在这个策略下选择正确方向的概率为$p^2 + p - p^2 = p$，并不会比只让一条猎犬选择更优。
+    \section*{31.}
+        \subsection*{(a)}
+            由于不同信号之间独立，第k个信号正确传输的概率为$p(1 - \epsilon_0) + (1 - p)(1 - \epsilon_1)$
+        \subsection*{(b)}
+            1011一共含有三个1和一个0，且彼此独立，所以正确传输的概率为$(1 - \epsilon_0)(1 - \epsilon_1)^3$
+        \subsection*{(c)}
+            只有以下的情况数据可以被正常传输：
+
+            \begin{itemize}
+                \item 3个0均没有错误，概率为$(1 - \epsilon_0)^3$
+                \item 只有一个0发生错误，概率为$C^1_3\epsilon_0(1 - \epsilon_0)^2$
+            \end{itemize}
+
+            综上，0被正确传输的概率为$(1 - \epsilon_0)^3 + 3\epsilon_0(1 - \epsilon_0)^2$
+        \subsection*{(d)}
+            将(c)中的式子变形为$1^3 - 3\epsilon_0^2(1 - \epsilon_0) - \epsilon_0^3 = 1 - 3\epsilon_0^2 + 2\epsilon_0^3$
+
+            对上式求导得到$-6\epsilon_0 + 6\epsilon_0^2$,由于$0 \leq \epsilon_0 \leq 1$，所以函数在$\epsilon_0 = 0$时取到最大值。
+            即：整个传输过程完全不要出错是坠吼的。
+        \subsection*{(e)}
+            由贝叶斯准则，对方发出的数据为0的概率为$\frac{P(0)}{P(1) + P(0)} = \frac{\epsilon_0^2}{\epsilon_1 + \epsilon_0^2}$
+    \section*{32.}
+        \begin{itemize}
+            \item 因为各次生育是独立的，所以国王的性别并不会影响他的兄弟姐妹，而生男的概率为$\frac{1}{2}$，故国王有一个兄弟的概率为$\frac{1}{2}$
+            \item 国王的母亲一共有两个孩子，并且两个都是男性，所以国王有一个兄弟的概率为$\frac{1}{4}$
+        \end{itemize}
+    \section*{33.}
+        投一次硬币已经没办法解决这个问题了，那我们考虑投两次。投两次硬币的全部概率为$1^2 = (1 - p + p)^2 = (1 - p)^2 + 2p(1 - p) + p^2$。注意到里面有一个2，
+        那么我们不妨投两次硬币，如果两次结果相同，则重新开始；剩余的两种情况每个人获胜的概率均为$\frac{1}{2}$。
+\end{document}
