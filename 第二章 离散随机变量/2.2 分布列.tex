@@ -1,0 +1,105 @@
+\documentclass[UTF8]{report}
+\usepackage{ctex}
+
+\begin{document}
+    \section*{1.}
+        \begin{table}[!htbp]
+            \begin{tabular}{llllll}
+                得分 & 0 & 1 & 2 & 3 & 4 \\
+                概率 & 0.18 & 0.27 & 0.34 & 0.14 & 0.07
+            \end{tabular}
+        \end{table}
+    \section*{2.}
+        假设有k个人与你的生日相同，由二项分布：
+        $$P_X(k) = C_{500}^kp^k(1 - p)^{500 - k}$$
+        其中$p = \frac{1}{365}$，则有人生日与你相同的概率为$1 - P_X(0) = 1 - (1 - \frac{1}{365})^{500} \approx 0.75$。
+
+        若使用泊松分布逼近，$\lambda = np = \frac{500}{365}$，
+        那么$1 - P_X(0) = 1 - e^{-\lambda}\frac{\lambda^0}{0!} \approx 0.75$。
+    \section*{3.}
+        \subsection*{(a)}
+            设k为比赛连续平局的局数，则$P(k) = 0.3^k$，那么赢得比赛的概率为$0.4\sum_{i = 0}^9P(i) = 0.5714251972‬$。
+        \subsection*{(b)}
+            下棋的前9局数满足几何分布，所以$P_X(k) = (1 - p)^{k - 1}p = 0.3^{k - 1}0.7$，
+            第10局后比赛一定结束，
+            所以分布列为：
+            \begin{table}[!htbp]
+                \begin{tabular}{llllll}
+                    局数 & 1 & 2 & 3 & 4 & 5 \\
+                    概率 & 0.7 & 0.21 & 0.063 & 0.0189‬ &
+                    0.00567‬
+                \end{tabular}
+            \end{table}
+
+            \begin{table}[!htbp]
+                \begin{tabular}{llllll}
+                    局数 & 6 & 7 & 8 & 9 & 10 \\
+                    概率 & 0.001701‬ & 0.0005103‬ &
+                     0.00015309‬ & 0.000045927‬ & 0.000019683‬
+                \end{tabular}
+            \end{table}
+    \section*{4.}
+        \subsection*{(a)}
+            在使用者的数量小于等于50的时候，调制解调器的数量分布满足二项分布；
+            使用者数量大于50的时候，由于调制解调器数量不足，故一定是50个。
+
+            所以分布列为：
+            \begin{table}[!htbp]
+                \begin{tabular}{lll}
+                    人数 & $k \leq 50$ & $k > 50$ \\
+                    概率 & $C_{1000}^k0.01^k0.99^{1000 - k}$ & $1 - \sum_{i = 0}^{50}C_{1000}^i0.01^i0.99^{1000 - i}$ 
+                \end{tabular}
+            \end{table}
+        \subsection*{(b)}
+            设使用者人数为k，由泊松分布有$P_X(k) = e^{-\lambda}\frac{\lambda^k}{k!} = e^{-10}\frac{10^k}{k!}$
+        \subsection*{(c)}
+            利用精确分布，$P = 1 - \sum_{i = 0}^{50}C_{1000}^i0.01^i0.99^{1000 - i}$，而利用泊松分布，$P = 1 - \sum_{i = 0}^{50}e^{-10}\frac{10^i}{i!}$
+    \section*{5.}
+        \subsection*{(a)}
+            第一时段结束时：
+            \begin{table}[!htbp]
+                \begin{tabular}{lll}
+                    信息包数量k & $k < b$ & $k = b$ \\
+                    概率 & $e^{-\lambda}\frac{\lambda^k}{k!}$ & $1 - \sum_{i = 0}^{b - 1}e^{-\lambda}\frac{\lambda^i}{i!}$
+                \end{tabular}
+            \end{table}
+
+            第二时段结束时：
+            \begin{table}[!htbp]
+                \begin{tabular}{lll}
+                    信息包数量k & $k = 0$ & $k > 0$ \\
+                    概率 & $\sum_{i = 0}^c e^{-\lambda}\frac{\lambda^i}{i!}$ &
+                    $\sum_{i = c + 1}^{b - 1} e^{-\lambda}\frac{\lambda^i}{i!} + 1 - \sum_{i = 0}^{b - 1}e^{-\lambda}\frac{\lambda^i}{i!}$
+                \end{tabular}
+            \end{table}
+        \subsection*{(b)}
+            如果到达的信息包的数量不超过b，是不会发生丢包的，
+            所以丢包的概率为$1 - \sum_{i = 0}^{b}e^{-\lambda}\frac{\lambda^i}{i!}$。
+    \section*{6.}
+        \subsection*{(a)}
+            对于$n = 5$，凯尔特人队获胜的概率为$p^3 + C_3^1p^3(1 - p) + C_4^2p^3(1 - p)^2 = 10p^3 - 15p^4 + 6p^5$；
+
+            对于$n = 3$，凯尔特人队获胜的概率为$p^2 + C_2^1p^2(1 - p) = 3p^2 - 2p^3$
+
+            所以当$10p^3 - 15p^4 + 6p^5 > 3p^2 - 2p^3$，时，$n = 5$比$n = 3$合算。
+            将所有式子移到左侧，消去$p^2(p > 0)$并求导得到$18p^2 - 30p + 12$，不难发现当$p = \frac{1}{2}$或$p = 1$时，原式为0，
+            且该函数在$[0.5, 1]$上先增后减，所以当$p \in (0.5, 1)$时$n = 5$比$n = 3$合算。
+        \subsection*{(b)}
+            不难得到$P_N(n = 2k + 1) = p^{k + 1} + C_{k + 1}^1P^{k+1}(1 - p) + \dots + C_{2k}^kp^{k + 1}(1 - p)^k$，
+            并且对于不同的k，$P_N(0) = 0, P_N(1) = 1, P_N(\frac{1}{2}) = \frac{1}{2}$恒成立（0和1十分显然，对于0.5的证明我们额外放在(c)部分讲解）。
+
+            不妨做差$P_N(2k + 3) - P_N(2k + 1)$并对这个式子求导，不难验证导数在$\frac{1}{2}$处大于0。
+            由罗尔定理导函数在$[0.5, 1]$之间一定存在值为0的点，且仅有一个（这是一个$2k + 1$重多项式，其中0为k重根，1为k重根，$\frac{1}{2}$为1重根）。
+            所以导函数在区间上先增后减，原来的差值函数保证大于0，故$p \in (0.5, 1)$。
+        \subsection*{(c)}
+            原题不存在，这部分是(b)中$P_N(n)$在$p = \frac{1}{2}$为常数的证明。
+
+            因为$P_N(n = 2k + 1) = p^{k + 1} + C_{k + 1}^1p^{k+1}(1 - p) + \dots + C_{2k}^kp^{k + 1}(1 - p)^k$,
+            将$\frac{1}{2}$带入后$P_N(2k + 1) = (\frac{1}{2})^{k + 1} + C_k^1(\frac{1}{2})^{k + 2} + \dots + C_{2k}^k(\frac{1}{2})^{2k + 1}$。
+            
+            当$k = 0$时，原式显然成立。假定$k = m$时原式也成立，则$k = m + 1$时，
+            我们不妨计算$2^{k+2}P_N(2m + 3), 2^{k + 1}P_N(2m + 1)$，将两个式子逐项做差，得到$2^{k + 1}P_N(2m + 1)$，
+            则$2^{k+2}P_N(2m + 3) = 2^{k + 2}P_N(2m + 1)$，故原式也为$\frac{1}{2}$，归纳完毕。
+
+            证毕。
+\end{document}
