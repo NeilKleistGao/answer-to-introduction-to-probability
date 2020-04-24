@@ -102,4 +102,60 @@
             则$2^{k+2}P_N(2m + 3) = 2^{k + 2}P_N(2m + 1)$，故原式也为$\frac{1}{2}$，归纳完毕。
 
             证毕。
+    \section*{7.}
+        \subsection*{(a)}
+            \subsubsection*{(1)}
+                由于失败后会做记号，所以尝试的次数最多只有四次（第四次即便失败，剩下的钥匙也没必要再试一次了）。
+
+                分布列：
+                \begin{table}[!htbp]
+                    \begin{tabular}{lllll}
+                        尝试次数 & 1 & 2 & 3 & 4 \\
+                        概率 & $\frac{1}{5}$ & $\frac{1}{5}$ & $\frac{1}{5}$ & $\frac{2}{5}$
+                    \end{tabular}
+                \end{table}
+            \subsubsection*{(2)}
+                随机尝试的情况下，尝试次数满足几何分布，所以分布律为：$P(k) = (\frac{4}{5})^{k - 1}(\frac{1}{5})^k$。
+        \subsection*{(b)}
+            \subsubsection*{(1)}
+                \begin{table}[!htbp]
+                    \begin{tabular}{lllllllll}
+                        尝试次数 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\
+                        概率 & $\frac{1}{5}$ & $\frac{8}{45}$ & $\frac{7}{45}$ & $\frac{2}{15}$ & $\frac{1}{9}$ & $\frac{4}{45}$ & $\frac{1}{15}$ & $\frac{1}{15}$
+                    \end{tabular}
+                \end{table}
+            \subsubsection*{(2)}
+                $P(k) = (\frac{4}{5})^{k - 1}(\frac{1}{5})^k$
+    \section*{8.}
+        二项随机变量满足$P_X(k) = C_n^kp^k(1 - p)^{n - k}$。
+        
+        所以
+        $$P_X(k + 1) = C_n^{k + 1}p^{k + 1}(1 - p)^{n - k - 1} = $$
+        $$\frac{n!}{(k + 1)!(n - k -1)!}p^{k + 1}(1 - p)^{n - k - 1} = $$
+        $$\frac{n - k}{k + 1}\frac{n!}{k!(n - k)!}\frac{p}{1 - p}p^k(1 - p)^{n - k} = \frac{p}{1 - p}\frac{n - k}{k + 1}P_X(k)$$
+
+        证毕。
+    \section*{9.}
+        由第8题，我们可以得到：
+        $P_X(k + 1) - P_X(k) = (\frac{p}{1 - p}\frac{n - k}{k + 1} - 1)P_X(k)$。
+
+        由于$P_X(k) \geq 0$，我们不妨令$f(k) = \frac{p}{1 - p}\frac{n - k}{k + 1} - 1$，
+        则$f'(k) = \frac{-p(n + 1)}{(1 - p)(k + 1)^2}$。
+
+        不难发现导函数恒为负，且当$k = p(n + 1) - 1$时，原函数为0。所以当$k <= (n + 1)p$时，$P_X(k)$是非降的，而在$k > (n + 1)p$时是单调递减的。
+
+        证毕。
+    \section*{10.}
+        因为泊松分布$P_X(k) = e^{-\lambda}\frac{\lambda^k}{k!}$，
+        所以$P_X'(k) = \frac{\lambda^ke^{-\lambda}}{(k!)^2}(ln\lambda\Gamma(k + 1) - \Gamma'(k + 1))$。
+
+        由于括号外的部分恒正，我们解括号内的部分等于0，即$\frac{\Gamma'(k + 1)}{\Gamma(k + 1)} = \Psi(k + 1) = ln\lambda$。
+
+        解得近似解为$k = \lambda$。由于$\Psi(x)$是单调递增的，故导函数在$[0, \lambda]$上大于0，在$(\lambda, \infty)$上小于0。
+
+        证毕。
+    \section*{11.}
+        略。
+    \section*{12.}
+        略。
 \end{document}
