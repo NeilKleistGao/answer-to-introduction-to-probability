@@ -1,0 +1,50 @@
+\documentclass[UTF8]{report}
+\usepackage{ctex}
+
+\begin{document}
+    \section*{16.}
+        \subsection*{(a)}
+            由归一性可知$2(P_X(3) + P_X(2) +P_X(1)) + P_X(0) = 1$，
+            解之得$a = \frac{1}{28}$。
+
+            由于$P_X$及其定义域关于$x = 0$对称，所以$E[x] = 0$。
+        \subsection*{(b)}
+            因为$E[x] = 0$，所以$Z = X^2$，
+            故$P_Z(z) = \{\begin{array}{lcr}
+                \frac{2z}{28} & & z = 0, 1, 4, 9 \\
+                0 & & otherwise
+            \end{array}$
+        \subsection*{(c)}
+            由(b)得，$var(X) = E[Z] = \frac{2}{28} + \frac{32}{28} + \frac{162}{28} = 7$。
+        \subsection*{(d)}
+            $var(X) = \sum_{x}(x - E[X])^2p_X(x) = 2(\frac{1}{28} + \frac{16}{28} + \frac{81}{28}) = 7$
+    \section*{17.}
+        因为$F = 1.8C + 32$，所以$E[F] = 1.8E[C] + 32 = 40$，$var(F) = 1.8^2var(C) = 324$，所以$\sigma_F = 18$。
+    \section*{18.}
+        $E[X] = \int_a^b\frac{2^x}{b - a}dx = \frac{2^b - 2^a}{(b - a)ln2}$
+
+        $var(X) = \int_a^b(2^x - E[X])^2 = \frac{2^{2b} - 2^{2a}}{2ln2} - \frac{b - a}{ln2} + (2^b - 2^a)^2(b - a)$
+    \section*{19.}
+        略。
+    \section*{20.}
+        设需要购买的数量为随机变量X，则X满足几何分布。所以$P_X(x) = (1 - p)^{x - 1}p$，
+        故期望$E[X] = \sum_{x = 1}^{\infty}x(1 - p)^{x - 1}p$，计算$E[x] - (1 - p)E[x]$后求得期望为$\frac{1}{p}$。
+
+        首先计算$E[X^2]$，然后使用$var(X) = E[X^2] - E[X]^2$计算方差。
+        因为$\\E[X^2] = \sum_{x = 1}^{\infty}x^2(1 - p)^{x - 1}p$，
+        不难发现可以利用积分得到类似$E[X]$的形式。最后求得$E[X^2] = \frac{2 - p}{p^2}$，
+        故$var(X) = \frac{1 - p}{p^2}$。
+    \section*{21.}
+        由题意得，这是一个几何分布，所以$P_N(n) = (\frac{1}{2})^n$。
+        于是我们可以求得期望$E[X] = \sum_{x = 1}^{\infty}(\frac{1}{2})^x2^x = \infty$。
+
+        这个级数并不收敛，所以理论上你可以得到无穷多的钱，但是事实上这并不可能发生。
+    \section*{22.}
+        \subsection*{(a)}
+            $$P_X(x) = (1 - p - q + 2pq)^{x - 1}(p + q - 2pq)$$
+            $$E[X] = \frac{1}{p + q -2pq}$$
+            $$var(X) = \frac{1 - p - q + 2pq}{(p + q - 2pq)^2}$$
+        \subsection*{(b)}
+            由条件概率得：
+            $\frac{p(1 - q)}{p + q - 2pq}$
+\end{document}
