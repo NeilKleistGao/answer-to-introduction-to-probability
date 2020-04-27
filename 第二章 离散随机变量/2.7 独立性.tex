@@ -1,0 +1,17 @@
+\documentclass[UTF8]{report}
+\usepackage{ctex}
+
+\begin{document}
+    \section*{38.}
+        设每个路口遇到红灯的概率为p。
+        \subsection*{(a)}
+            $$P_X(x) = C_4^xp^x(1 - p)^{4 - x}$$
+            $$E[X] = 4p$$
+            $$var(X) = \sum_{i = 0}^4var(X_i) = 4p(1 - p)$$
+        \subsection*{(b)}
+            $$var(2X) = 16p(1 - p)$$
+    \section*{39.}
+        由独立性，有：
+        $$E[X] = \sum_{i = 1}^{10}E[X_i] = 35$$
+        $$var(X) = \sum_{i = 1}^{10}var(X_i) = \frac{175}{6}$$
+\end{document}
