@@ -14,4 +14,47 @@
         由独立性，有：
         $$E[X] = \sum_{i = 1}^{10}E[X_i] = 35$$
         $$var(X) = \sum_{i = 1}^{10}var(X_i) = \frac{175}{6}$$
+    \section*{40.}
+        由于论文之间的成绩完全独立，我们不妨在论文与论文之间插入隔板，以此区分不同成绩的两批论文。
+        如果上交了k篇论文，每种评分的论文至少有一篇的概率就为$P(k) = \frac{5!C_{k - 1}^5}{(k + 1)^5}$
+        （一共需要安插5个隔板，分为6个不同评分的区间，所有的可能安插的位置一共是$k + 1$个，而合法的安插位置只能在中间的$k - 1$个中选择，且不能重复，隔板自身的顺序有$5!$种）。
+
+        其中$P(24) \approx 0.5$，$\lim_{k \to \infty} = 1$。
+    \section*{41.}
+        \subsection*{(a)}
+            不难得到$P(x) = C_{250}^x0.02^x0.98^{250 - x}$，所以$E[X] = 50$。
+
+            所以罚单数刚好等于50的概率为$P(50)$。
+        \subsection*{(b)}
+            利用泊松分布近似(a)中的结果：$P(50) \approx e^{-50}\frac{(50)^{50}}{50!} \approx 0.056$。
+        \subsection*{(c)}
+            $$E[0.5 \times 10X + 0.3 \times 20X + 0.2 \times 50X] = 1050$$
+            $$var(0.5 \times 10X + 0.3 \times 20X + 0.2 \times 50X) = 2160.9$$
+        \subsection*{(d)}
+            因为$\sigma(X) \approx 2.21$，所以$p \in [0, 0.064]$。
+    \section*{42.}
+        \subsection*{(a)}
+            因为$P_{X_i} = S$，所以$E[X_i] = S$，故$E[S_n] = \frac{nS}{n} = S$。
+
+            对于单个点的方差$var(X_i) = S(1 - S)$是有限值，
+            所以由独立性$\\\lim_{n \to \infty}var(S_n) = \frac{nS(1 - S)}{n^2} = 0$。
+
+            证毕。
+        \subsection*{(b)}
+            $$S_n = \frac{(n - 1)S_{n - 1} + X_n}{n}$$
+        \subsection*{(c)}
+            由于单位正方形的内切圆的半径为$\frac{1}{2}$，所以
+            $$\pi = 4E[S_n] = \frac{4}{n}\sum_{i = 1}^{10000}P_{X_i}$$
+            只要计算落在圆形内部的点的数量即可确定$\pi$的值。
+
+        \subsection*{(d)}
+            类似于(c)。
+    \section*{43.}
+        略。
+    \section*{44.}
+        略。
+    \section*{45.}
+        略。
+    \section*{46.}
+        略。
 \end{document}
