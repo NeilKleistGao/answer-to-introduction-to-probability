@@ -1,0 +1,64 @@
+\documentclass[UTF8]{report}
+\usepackage{ctex}
+
+\begin{document}
+    \section*{5.}
+        不妨设三角形的高为H，对应的底边长度为L，
+        则分布函数$P_X(x)$可以用梯形的面积除以三角形面积得到：
+        $P_X(x) = \frac{\frac{H - x}{H}L + L}{2}\frac{2}{HL} = \frac{x(2H - x)}{H^2}, x \in [0, H]$。
+
+        所以概率密度函数$f_X(x) = P_X'(x) = \frac{2(H - x)}{H^2}$。
+    \section*{6.}
+        有0个顾客的时候，等候的时间为0；有一个顾客的时候，等候时间是一个指数随机变量。
+        所以：
+        $$P_X(x) = \left\{
+            \begin{array}{lcr}
+                0 & & x < 0\\
+                \frac{1}{2} & & x = 0\\
+                \frac{1}{2}(1 + \int_{0}^{x}\lambda e^{-\lambda t}dt) & & x > 0
+            \end{array}
+        \right.$$
+
+        解之得：
+        $$P_X(x) = \left\{
+            \begin{array}{lcr}
+                0 & & x < 0\\
+                \frac{1}{2} & & x = 0\\
+                \frac{1}{2}(2 - e^{-\lambda x}) & & x > 0
+            \end{array}
+        \right.$$
+    \section*{7.}
+        \subsection*{(a)}
+            X的分布函数为两个圆形面积的比值，所以$P_X(x) = \frac{x^2}{r^2}, x \in [0, r]$。
+            求导后可以得到概率密度函数$f_X(x) = \frac{2x}{r^2}$。所以$E[X] = \int_{0}^{r}\frac{2x^2}{r^2}dx = \frac{2r}{3}$，
+            $var(X) = E[X^2] - E[X]^2 = \frac{r^2}{18}$。
+        \subsection*{(b)}
+            由上一问可知：
+            $$P_S(s) = \left\{
+                \begin{array}{lcr}
+                    0 & & s < 0\\
+                    \frac{r^2 - t^2}{r^2} & & s = 0\\
+                    \frac{r^2 - t^2}{r^2} & & 0 < s < \frac{1}{t}\\
+                    \frac{r^2 - t^2}{r^2} + \frac{t^2 - (\frac{1}{s})^2}{r^2} & & s \geq \frac{1}{t}
+                \end{array}
+            \right.$$
+
+            是连续随机变量。
+    \section*{8.}
+        \subsection*{(a)}
+            X的分布函数为$P_X(X \leq x)$，由全概率公式，可以得到$P_X(X \leq x) = pP_Y(Y \leq x) + (1 - p)P_Z(Z \leq x)$。
+            对式子两侧分别求导可得$f_X(x) = pf_Y(x) + (1 - p)f_Z(x)$。
+
+            证毕。
+        \subsection*{(b)}
+            $$P_X(x) = \left\{
+                \begin{array}{lcr}
+                    pe^{\lambda x} & & x < 0\\
+                    1 + (p - 1)e^{-\lambda x} & & x \geq 0
+                \end{array}
+            \right.$$
+    \section*{9.}
+        略。
+    \section*{10.}
+        略。
+\end{document}

@@ -1,0 +1,32 @@
+\documentclass[UTF8]{report}
+\usepackage{ctex}
+
+\begin{document}
+    \section*{1.}
+        因为X是$[0, 1]$上的均匀分布，所以$p_X(x) = 1, x \in [0, 1]$。
+        所以Y的分布列为
+        $$P_Y(y) = \left\{
+            \begin{array}{lcr}
+                \int_{0}^{\frac{1}{3}}p_X(x)dx = \frac{1}{3} & & y = 1\\
+                \int_{\frac{1}{3}}^{1}p_X(x)dx = \frac{2}{3} & & y = 2\\
+                0 & & otherwise
+            \end{array}
+        \right.$$
+
+        所以$E[Y] = \frac{5}{3}$，根据期望规则，
+        $E[Y] = \int_{0}^{\frac{1}{3}}dx + \int_{\frac{1}{3}}^{1}2dx = \frac{5}{3}$，
+        可以验证我们的结果是正确的。
+    \section*{2.}
+        $\int_{-\infty}^{\infty}\frac{\lambda}{2}e^{-\lambda |x|} = \int_{0}^{\infty}\lambda e^{-\lambda x}$，
+        可见积分值与指数分布相同，归一化得证。
+
+        所以拉普拉斯随机变量的期望$E[X] = \int_{-\infty}^{\infty}\frac{x\lambda}{2}e^{-\lambda |x|} = 0$，
+        则$var(X) = E[X^2] = \int_{-\infty}^{\infty}\frac{x^2\lambda}{2}e^{-\lambda |x|}dx = \frac{2}{\lambda^2}$。
+
+        拉普拉斯分布的更普遍形式为$p_X(x) = \frac{1}{2\lambda}e^{-\frac{|x - \mu|}{\lambda}}$，
+        这个形式下的$\\E[X] = \mu, var(X) = 2\lambda^2$。
+    \section*{3.}
+        略。
+    \section*{4.}
+        略。
+\end{document}
