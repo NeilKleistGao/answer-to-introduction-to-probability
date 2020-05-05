@@ -1,0 +1,32 @@
+\documentclass[UTF8]{report}
+\usepackage{ctex}
+
+\begin{document}
+    \section*{11.}
+        \subsection*{(a)}
+            因为$\sigma_X = 1, \mu_X = 0$，所以X服从标准正态分布。
+            所以我们根据标准正态分布表，可以得到：
+            $P(X \leq 1.5) \approx 0.9332,\\
+             P(X leq -1) = 1 - \Phi(1) \approx 0.1587$。
+        \subsection*{(b)}
+            因为$\sigma_Y = 2, \mu_Y = 1$，而$Z = \frac{Y - 1}{2}$，所以
+            $\sigma_Z = 1, \mu_Z = 0$，所以
+            $f_Z(z) = \frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}}$。
+        \subsection*{(c)}
+            由(b)可知：$P(-1 \leq Y \leq 1) = P(-1 \leq Z \leq 0) =\\ 0.5 - P(Z \leq -1) \approx 0.3413$。
+    \section*{12.}
+        $P(X \geq k\sigma) = 1 - P(X \leq k\sigma)$，令$Y = \frac{X}{\sigma}$，
+        则$P(X \geq k\sigma) = 1 - P(Y \leq k)$，于是：$P(X \geq \sigma) \approx 0.1587,
+        P(X \geq 2\sigma) \approx 0.0228, P(X \geq 3\sigma) \approx 0.0013$。
+
+        由于$\mu = 0$，所以$P(|X| \leq k\sigma) = 1 - 2P(X \geq k\sigma)$，
+        所以$P(X \geq \sigma) \approx 0.6826,
+        P(X \geq 2\sigma) \approx 0.9544, P(X \geq 3\sigma) \approx 0.9974$。
+    \section*{13.}
+        因为$C = \frac{F - 32}{1.8}$，所以$P(F \leq 59) = P(C \leq 15)$，
+        其中C满足正态分布，$\mu_C = 10, \sigma_C = 10$。
+        
+        再令$X = \frac{C - \mu_C}{\sigma_C}$，则$P(F \leq 59) = P(X \leq 0.5) \approx 0.6915$。
+    \section*{14.}
+        略。
+\end{document}
