@@ -1,0 +1,40 @@
+\documentclass[UTF8]{report}
+\usepackage{ctex}
+
+\begin{document}
+    \section*{15.}
+        \subsection*{(i)}
+            $$f_{X,Y}(x, y) = \left\{
+                \begin{array}{lcr}
+                    \frac{2}{\pi r} & & x^2 + y^2 \leq r, y > 0\\
+                    0 & & otherwise
+                \end{array}
+            \right.$$
+        \subsection*{(ii)}
+            由(i)得：$f_Y(y) = \int_{-\sqrt{r - y^2}}^{\sqrt{r - y^2}}\frac{2}{\pi r}dx = \frac{4}{\pi r}\sqrt{r - y^2}$，
+            所以$E[Y] =\\ \int_{0}^{\sqrt{r}}\frac{4y}{\pi r}\sqrt{r - y^2}dy = \frac{4\sqrt{2}}{3 \pi}$。
+        \subsection*{(iii)}
+            利用期望规则直接积分：
+            $E[Y] = \int_{0}^{\sqrt{r}}ydy\int_{-\sqrt{r - y^2}}^{\sqrt{r - y^2}}\frac{2}{\pi r}dx = \frac{4\sqrt{2}}{3 \pi}$。
+    \section*{16.}
+        不妨设针的中点到最近的水平线的距离为X，到最近的垂直线的距离为Y，针与水平线的夹角为$\Theta$，
+        根据布丰抛针问题，我们可以得到：
+        $$f_{X, Y, \Theta} = \left\{
+            \begin{array}{lcr}
+                \frac{8}{ab\pi} & & x \in [0, \frac{b}{2}], y \in [0, \frac{a}{2}], \theta \in [0, \frac{\pi}{2}]\\
+                0 & & otherwise
+            \end{array}
+        \right.$$
+
+        所以针与水平线相交的概率为
+        $\\P(X \leq \frac{l}{2}sin\Theta) = \frac{8}{ab\pi}\int_{0}^{\frac{a}{2}}\int_{0}^{\frac{\pi}{2}}\int_{0}^{\frac{l}{2}sin\theta}dxd\theta dy = \frac{2l}{b\pi}$。
+
+        同理，针与垂直线相交的概率为：
+        $\\P(Y \leq \frac{l}{2}cos\Theta) = \frac{8}{ab\pi}\int_{0}^{\frac{b}{2}}\int_{0}^{\frac{\pi}{2}}\int_{0}^{\frac{l}{2}cos\theta}dyd\theta dx = \frac{2l}{a\pi}$。
+
+        所以相交边数的期望值为$\frac{2l}{b\pi}(1 - \frac{2l}{a\pi}) + \frac{2l}{a\pi}(1 - \frac{2l}{b\pi}) + 2\frac{2l}{a\pi}\frac{2l}{b\pi} = \frac{2l}{b\pi} + \frac{2l}{a\pi}$，
+        至少交于一条边的概率为$\frac{2l}{b\pi} + \frac{2l}{a\pi} - \frac{2l}{a\pi}\frac{2l}{b\pi}$。
+
+    \section*{17.}
+        略。
+\end{document}
