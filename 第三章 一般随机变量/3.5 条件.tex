@@ -30,4 +30,148 @@
         \subsection*{(c)}
             $$E[Y|A] = E[X^2|A] = \int_{1.5}^{2}6dx = 3$$
             $$var(Y|A) = E[Y^2|A] - E[Y|A]^2 = \frac{1}{4}$$
+    \section*{20.}
+        因为共同的分布为指数分布，且期望值为30，所以$f_X(x) = \frac{1}{30}e^{-\frac{x}{30}}$。
+        第二个学生到达时，第一个学生已经到达了5分钟，所以$P(X \geq 5) = 1 - \int_{0}^{5}f_X(x) = e^{-\frac{1}{6}}$。
+        所以第一个学生答疑时间的概率密度函数变为$f_{X|A}(x) = \frac{e^{\frac{1}{6}}}{30}e^{-\frac{x}{30}}$，
+        其期望值为$E[X|A] = \int_{5}^{\infty}\frac{e^{\frac{1}{6}}x}{30}e^{-\frac{x}{30}}dx = 35$，所以所花时间的期望值为65。
+    \section*{21.}
+        \subsection*{(a)}
+            $$f_{X, Y}(x, y) = \left\{
+                \begin{array}{lcr}
+                    \frac{1}{xl} & & y \leq x \leq l\\
+                    0 & & otherwise
+                \end{array}
+            \right.$$
+        \subsection*{(b)}
+            $$f_{Y}(y) = \left\{
+                \begin{array}{lcr}
+                    \int_{y}^{l}\frac{dx}{xl} & & 0 \leq y \leq l\\
+                    0 & & otherwise
+                \end{array}
+            \right.$$
+            
+            解之得：
+            $$f_{Y}(y) = \left\{
+                \begin{array}{lcr}
+                    \frac{lnl - lny}{l} & & 0 \leq y \leq l\\
+                    0 & & otherwise
+                \end{array}
+            \right.$$
+        \subsection*{(c)}
+            $$E[Y] = \int_{0}^{l}\frac{y(lnl - lny)}{l}dy = \frac{l}{4}$$
+        \subsection*{(d)}
+            $E[Y] = E[X\frac{Y}{X}] = E[X]E[\frac{Y}{X}] = \frac{l}{2}\frac{1}{2} = \frac{l}{4}$。
+    \section*{22.}
+        \subsection*{(i)}
+            设随机选取的两个点距离左侧的距离为X和Y，不妨认为X为更靠右侧的那个点，则概率密度函数为：
+            $$f_{X, Y}(x, y) = \left\{
+                \begin{array}{lcr}
+                    \frac{1}{x} & & 0 \leq y \leq x \leq 1\\
+                    0 & & otherwise
+                \end{array}
+            \right.$$
+
+            由于三角形的两边之和大于第三边，我们可以列出满足条件的三个式子：
+            $$\begin{array}{lcr}
+                Y + X - Y & > & 1 - X\\
+                Y + 1 - X & > & X - Y\\
+                X - Y + 1 - X & > & Y\\
+            \end{array}$$
+            
+            整理后得到：
+            $$\begin{array}{lccrr}
+                X & > & \frac{1}{2} & \rightarrow & A\\
+                Y & < & \frac{1}{2} & \rightarrow & B\\
+                X - Y & < & \frac{1}{2} & \rightarrow & C\\
+            \end{array}$$
+
+            所以$P(A) = 1 - \int_{0}^{\frac{1}{2}}\int_{0}^{x}\frac{dydx}{x} = \frac{1}{2}$，
+            $P(B|A) = \int_{\frac{1}{2}}^{1}\int_{0}^{\frac{1}{2}}\frac{2}{x}dydx = ln2$，
+            $P(C|(B|A)) = \int_{\frac{1}{2}}^{1}\int_{x - \frac{1}{2}}^{\frac{1}{2}}\frac{dydx}{xln2} = 1 - \frac{1}{2ln2}$。
+        \subsection*{(ii)}
+            本质上和(i)是一样的，仅仅只是选取方向的不同。
+        \subsection*{(iii)}
+            设Y为第一次选取的点距离最近的一端的距离，X为第二次选区的点距离Y的距离，则概率密度函数为：
+            $$f_{X, Y}(x, y) = \left\{
+                \begin{array}{lcr}
+                    \frac{2}{1 - y} & & 0 \leq y \leq \frac{1}{2}, y \leq x \leq 1\\
+                    0 & & otherwise
+                \end{array}
+            \right.$$
+
+            同(i)，我们可以列出以下的条件（注意，此时的三段杆的距离已经变成了$X, Y, 1 - X - y$）：
+            $$\begin{array}{lccrr}
+                X & < & \frac{1}{2} & \rightarrow & A\\
+                Y & < & \frac{1}{2} & \rightarrow & B\\
+                X + Y & > & \frac{1}{2} & \rightarrow & C\\
+            \end{array}$$
+
+            所以$P(A) = \int_{0}^{\frac{1}{2}}\int_{y}^{\frac{1}{2}}\frac{2}{1 - y}dxdy = 1 - ln2$，
+            $P(B|A) = 1$，$P(C|(B|A)) = 2ln\frac{4}{3} + \frac{1}{2}ln\frac{3}{2} - \frac{1}{4}$。
+    \section*{23.}
+        \subsection*{(a)}
+            $$f_{X, Y}(x, y) = \left\{
+                \begin{array}{lcr}
+                    2 & & x \geq 0, y \geq 0, x + y \leq 1\\
+                    0 & & otherwise
+                \end{array}
+            \right.$$
+        \subsection*{(b)}
+            $$f_Y(y) = \int_{0}^{1 - y}2dx = 2(1 - y)$$
+        \subsection*{(c)}
+            $$f_{X|Y = y}(x) = \frac{1}{1 - y}$$
+        \subsection*{(d)}
+            $$E[X|Y = y] = \frac{1 - y}{2}$$
+            $$E[X] = \int_{0}^{1}E[X|Y = y]F_{Y}(y)dy = \int_{0}^{1}(1 - y)^2dy = \frac{1}{3}$$
+        \subsection*{(e)}
+            利用对称性，$E[Y] = E[X] = \frac{1}{3}$。
+    \section*{24.}
+        概率密度函数：
+        $$f_{X, Y}(x, y) = \left\{
+            \begin{array}{lcr}
+                1 & & x \geq 0, y \geq 0, 2x + y \leq 2\\
+                0 & & otherwise
+            \end{array}
+        \right.$$
+
+        边缘概率密度函数：
+        $$f_X(x) = \int_{0}^{-2x + 2}dy = -2x + 2$$
+        $$f_Y(y) = \int_{0}^{\frac{2 - y}{2}}dx = \frac{2 - y}{2}$$
+
+        条件期望：
+        $$E[X|Y = y] = \frac{2 - y}{4}$$
+        $$E[Y|X = x] = 1 - x$$
+
+        所以由全期望定理可得：
+        $$E[X] = \int_{0}^{1}E[X|Y = y]f_Y(y)dy = \frac{5}{24}$$
+        $$E[Y] = \int_{0}^{2}E[Y|X = x]f_X(x)dx = \frac{4}{3}$$
+    \section*{25.}
+        $(X, Y)$离原点的距离至少为c，故$\sqrt{X^2 + Y^2} \geq c$，
+        所以$P(A) =\\ P(\sqrt{X^2 + Y^2} \geq c) = 1 - \int_{0}^{2\pi}\int_{0}^{c}\frac{\rho}{2\pi \sigma^2}e^{\frac{-\rho^2}{2\sigma^2}}d\rho d\theta = e^{\frac{-c^2}{2\sigma^2}}$。
+
+        于是得到条件联合概率密度函数：
+        $$f_{(X, Y)|A} = \frac{1}{2\pi \sigma^2}e^{\frac{-x^2 - y^2 + c^2}{2\sigma^2}}$$
+    \section*{26.}
+        略。
+    \section*{27.}
+        \subsection*{(a)}
+            $$\int_{(x, y) \in A}f_{X,Y|C}(x, y)dxdy = \frac{1}{P(C)}\int_{(x, y) \in A}f_{X, Y}(x, y)dxdy = \frac{P(C)}{P(C)} = 1$$
+            所以$f_{X,Y|C}(x, y)$是一个合格的联合概率密度函数。
+        \subsection*{(b)}
+            令$C = \bigcup_{i = 1}^{n}C_i$，因为$A_i$是二维平面的分割，所以$C_i$也是$C$的一个分割。
+            由(a)可知：$f_{X, Y}(x, y) = P(C)f_{X, Y|C}(x, y)$，所以由全概率公式即可得到
+            $f_{X, Y}(x, y) = \sum_{i = 1}^{n}P(C_i)f_{X, Y|C_i}(x, y)$。
+    \section*{28.}
+        略。
+    \section*{29.}
+        略。
+    \section*{30.}
+        略。
+    \section*{31.}
+        略。
+    \section*{32.}
+        略。
+    \section*{33.}
+        略。
 \end{document}
