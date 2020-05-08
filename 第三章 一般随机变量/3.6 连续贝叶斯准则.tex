@@ -1,0 +1,21 @@
+\documentclass[UTF8]{report}
+\usepackage{ctex}
+
+\begin{document}
+    \section*{34.}
+        \subsection*{(a)}
+            不妨设硬币正面朝上为事件A，由连续的全期望定理：$P(A) =\\ \int_{0}^{1}p^2e^pdp = e - 2$
+        \subsection*{(b)}
+            $$f_{P|A}(p) = \left\{
+                \begin{array}{lcr}
+                    \frac{pe^p}{e - 2} & & p \in A\\
+                    0 & & otherwise
+                \end{array}
+            \right.$$
+        \subsection*{(c)}
+            由连续贝叶斯准则：
+            $f_{P|X}(p|x) = \frac{f_{P}(p)P(X = x|P = p)}{P(x)} = \frac{p^2e^p}{e - 2}$，
+            所以第二次抛掷正面朝上的条件概率为$\int_{0}^{1}\frac{p^3e^p}{e - 2}dp = \frac{6 - 2e}{e - 2}$
+    \section*{35.}
+        略。
+\end{document}
