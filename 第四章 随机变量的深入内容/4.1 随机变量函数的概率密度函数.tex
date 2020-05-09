@@ -1,0 +1,55 @@
+\documentclass[UTF8]{report}
+\usepackage{ctex}
+
+\begin{document}
+    \section*{1.}
+        由题意得，$f_X(x) = \frac{1}{2}$，所以
+        $F_Y(y) = P(Y \leq y) = P(\sqrt{|X|} \leq y) = P(|X| \leq y^2)$。
+
+        $$F_Y(y) = \left\{
+            \begin{array}{lcr}
+                y^2 & & y \in [0, 1]\\
+                0 & & otherwise
+            \end{array}
+        \right.$$
+
+        求导后即可得到：
+        $$f_Y(y) = \left\{
+            \begin{array}{lcr}
+                2y & & y \in [0, 1]\\
+                0 & & otherwise
+            \end{array}
+        \right.$$
+
+        因为$F_Z(z) = P(Z \leq z) = P(-ln|X| \leq z) = P(|X| \geq e^{-z})$
+
+        $$F_Z(z) = \left\{
+            \begin{array}{lcr}
+                1 - e^{-z} & & z \in [0, \infty]\\
+                0 & & otherwise
+            \end{array}
+        \right.$$
+
+        所以
+        $$f_Z(z) = \left\{
+            \begin{array}{lcr}
+                e^{-z} & & z \in [0, \infty]\\
+                0 & & otherwise
+            \end{array}
+        \right.$$
+    \section*{2.}
+        令$Y = e^X$，则$F_Y(y) = P(Y \leq y) = P(e^X \leq y) = P(X \leq lny)$，
+        所以$F_Y(y) = \int_{-\infty}^{lny}f_X(x)dx$，求导后$f_Y(y) = \frac{f_X(lny)}{y}$。
+
+        当X服从$[0, 1]$上的均匀分布时：
+        $$f_Y(y) = \left\{
+            \begin{array}{lcr}
+                \frac{1}{y} & & y \in [1, e]\\
+                0 & & otherwise
+            \end{array}
+        \right.$$
+    \section*{3.}
+        令$Y = |X|^{\frac{1}{3}}, Z = |X|^{\frac{1}{4}}$，则：
+        $F_Y(y) = P(Y \leq y) = P(|X|^{\frac{1}{3}} \leq y) = P(|X| \leq y^3) = \int_{0}^{y^3}f_{|X|}(|x|)dx$，
+        所以$f_Y(y) = 3y^2f_{|X|}(y^3)$，同理$f_Z(z) = 4z^3f_{|X|}(y^4)$。
+\end{document}
