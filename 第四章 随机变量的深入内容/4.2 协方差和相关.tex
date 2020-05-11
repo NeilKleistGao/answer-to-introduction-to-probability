@@ -1,0 +1,43 @@
+\documentclass[UTF8]{report}
+\usepackage{ctex}
+
+\begin{document}
+    \section*{17.}
+        因为$var(X) = var(Y)$，所以
+        $$\begin{array}{l}
+            cov(X + Y, X - Y) = cov(X + Y, X) - cov(X + Y, Y)\\
+            = cov(X, X) + cov(Y, X) - cov(X, Y) - cov(Y, Y)\\
+            = cov(X, X) - cov(Y, Y)\\
+            = var(X) - var(Y)\\
+            = 0
+        \end{array}$$
+
+        所以$X + Y, X - Y$不相关。
+
+        证毕。
+    \section*{18.}
+        由题意得：
+        $cov(W, X) = cov(W, Y) = cov(W, Z) = cov(X, Y) =\\ cov(X, Z) = cov(Y, Z) = 0$，
+        所以：
+        $$\begin{array}{l}
+            \rho(R, S) = \frac{cov(R, S)}{\sqrt{var(R)var(S)}}\\
+            = \frac{cov(W + X, X + Y)}{\sqrt{var(W + X)var(X + Y)}}\\
+            = \frac{cov(W, X) + cov(W, Y) + cov(X, X) + cov(X, Y)}{\sqrt{(var(W) + var(X) + 2cov(W, X))(var(X) + var(Y) + 2cov(X, Y))}}\\
+            = \frac{var(X)}{\sqrt{(var(W) + var(X))(var(X) + var(Y)}}\\
+            = \frac{1}{2}
+        \end{array}$$
+
+        同理$\rho(S, T) = \frac{1}{2}$
+    \section*{19.}
+        $$\begin{array}{l}
+            \rho(X, Y) = \frac{cov(X, Y)}{\sqrt{var(X)var(Y)}}\\
+            = \frac{cov(X, a + bX + cX^2)}{\sqrt{var(X)var(a + bX + cX^2)}}\\
+            = \frac{cov(X, bX) + cov(X, cX^2)}{\sqrt{var(X)(var(a + bX) + var(cX^2) +2cov(a + bX, cX^2))}}\\
+            = \frac{b\times var(X) + c \times cov(X, X^2)}{\sqrt{var(X)(a^2var(X) + c^2var(X^2) + 2bc \times cov(X, X^2))}}\\
+            = \frac{b}{\sqrt{a + 2c^2}}
+        \end{array}$$
+    \section*{20.}
+        略。
+    \section*{21.}
+        略。
+\end{document}}

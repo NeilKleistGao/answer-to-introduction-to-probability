@@ -124,6 +124,23 @@
             \end{array}
         \right.$$
     \section*{13.}
-        因为概率密度函数的周期为$\frac{a + b}{2}$，所以有$f(x) = f(a + b - x)$，
+        因为概率密度函数的对称轴为$\frac{a + b}{2}$，所以有$f(x) = f(a + b - x)$，
         而$X + Y$和$X - Y$的积分区间正好差着$a + b$的距离，所以只需要将$f_{X + Y}$平移即可。
+    \section*{14.}  
+        $$\begin{array}{l}
+            P_Z(z) = P(min\{X, Y\} \leq z)\\
+            = 1 - P((min\{X, Y\} > z)\\
+            = 1 - P(X > z)P(Y > z)\\
+            = 1 - (1 - P(X \leq z))(1 - P(Y \leq z))\\
+            = 1 - (1 - \int_{0}^{z}\lambda e^{-\lambda x}dx)(1 - \int_{0}^{z}\mu e^{-\mu y}dy)\\
+            = 1 - e^{-(\lambda + \mu)z}
+        \end{array}$$
+
+        所以$Z = min\{X, Y\}$服从参数为$\lambda + \mu$的指数分布。
+
+        证毕。
+    \section*{15.}
+        略。
+    \section*{16.}
+        略。
 \end{document}
