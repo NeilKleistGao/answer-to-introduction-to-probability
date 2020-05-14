@@ -1,0 +1,46 @@
+\documentclass[UTF8]{report}
+\usepackage{ctex}
+
+\begin{document}
+    \section*{22.} 
+        设第i次赌博的收益比率为常量$R_i$，资产值为随机变量$X_i$，我们可以得到：
+        \begin{itemize}
+            \item $E[X_1] = (pR_1 + 2(1 - p)^2)x$
+            \item $E[X_2] = E[E[X_2|X_1]] = (pR_2 + 2(1 - p)^2)X_1$
+            \item $E[X_3] = E[E[X_3|X_2]] = (pR_3 + 2(1 - p)^2)X_2$
+            \item \dots
+        \end{itemize}
+
+        综上：$E[X_n] = x\Pi_{i = 1}^n(pR_i + 2(1 - p)^2)$
+    \section*{23.}
+        \subsection*{(a)}
+            当$X \leq 1$时，纳特的等待时间为0；当$X > 1$时，等待时间的期望值为$\int_{1}^{2}\frac{x - 1}{2}dx = \frac{1}{4}$，
+            所以总的等待时间的期望值为15分钟。
+        \subsection*{(b)}
+            当$X \leq 1$时，约会的时长是3小时；当$X > 1$时，约会时间的期望值为$E[Y] = E[E[Y|X]]$，
+            因为$E[Y|X] = \frac{3 - X}{2}$，所以$E[Y] = \frac{3}{2} - \frac{E[X]}{2} = 1$。
+            所以总的约会时间的期望值为2小时。
+        \subsection*{(c)}
+            TODO:
+    \section*{24.}
+        \subsection*{(a)}
+            由重期望法则：
+            $$\begin{array}{l}
+                E[X] = E[E[X|Y]] \\
+                = E[5 - Y] \\
+                = 5 - E[Y] \\
+                = 3
+            \end{array}$$
+        \subsection*{(b)}
+            $E[X + Y] = E[X] + E[Y] = 3 + 2 = 5$小时，所以是下午两点。
+        \subsection*{(c)}
+            TODO:
+    \section*{25.}
+        略。
+    \section*{26.}
+        略。
+    \section*{27.}
+        略。
+    \section*{28.}
+        略。
+\end{document}

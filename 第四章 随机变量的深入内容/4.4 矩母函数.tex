@@ -1,0 +1,32 @@
+\documentclass[UTF8]{report}
+\usepackage{ctex}
+
+\begin{document}
+    \section*{29.}
+        $$\begin{array}{l}
+            M(s) = \sum_{x}e^{sx}p_X(x)\\
+            = e^s \times \frac{1}{2} + e^{2s} \times \frac{1}{4} + e^{3s} \times \frac{1}{4}\\
+        \end{array}$$
+
+        所以：
+        \begin{itemize}
+            \item $E[X] = \frac{d}{ds}M(s)|_{s = 0} = \frac{7}{4}$
+            \item $E[X^2] = \frac{d^2}{ds^2}M(s)|_{s = 0} = \frac{15}{4}$
+            \item $E[X^3] = \frac{d^3}{ds^3}M(s)|_{s = 0} = \frac{37}{4}$
+        \end{itemize}
+    \section*{30.}
+        标准正态分布$f_X(x) = \frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}}$，
+        其矩母函数为
+        $$\begin{array}{l}
+            M(s) = \int_{-\infty}^{\infty}e^{sx}f_X(x)dx\\
+            = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{\frac{-x^2}{2} + sx}dx\\
+            = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-\frac{x^2 - 2sx + s^2 - s^2}{2}}dx\\
+            = \frac{e^{s^2}}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-\frac{(x - s)^2}{2}}dx\\
+            = e^{s^2}
+        \end{array}$$
+
+        所以$E[X^3] = 0, E[X^4] = 12$。
+    \section*{31.}
+        $M(s) = \int_{0}^{\infty}\lambda e^{-\lambda x + sx}dx = \frac{-\lambda}{s - \lambda}$，
+        所以$E[X^3] = \frac{6}{\lambda^4}, E[X^4] = \frac{24}{\lambda^5},\\ E[X^5] = \frac{120}{\lambda^6}$
+\end{document}
