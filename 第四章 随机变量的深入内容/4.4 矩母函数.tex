@@ -21,12 +21,66 @@
             M(s) = \int_{-\infty}^{\infty}e^{sx}f_X(x)dx\\
             = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{\frac{-x^2}{2} + sx}dx\\
             = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-\frac{x^2 - 2sx + s^2 - s^2}{2}}dx\\
-            = \frac{e^{s^2}}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-\frac{(x - s)^2}{2}}dx\\
-            = e^{s^2}
+            = \frac{e^{\frac{s^2}{2}}}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-\frac{(x - s)^2}{2}}dx\\
+            = e^{\frac{s^2}{2}}
         \end{array}$$
 
-        所以$E[X^3] = 0, E[X^4] = 12$。
+        所以$E[X^3] = 0, E[X^4] = 3$。
     \section*{31.}
         $M(s) = \int_{0}^{\infty}\lambda e^{-\lambda x + sx}dx = \frac{-\lambda}{s - \lambda}$，
         所以$E[X^3] = \frac{6}{\lambda^4}, E[X^4] = \frac{24}{\lambda^5},\\ E[X^5] = \frac{120}{\lambda^6}$
+    \section*{32.}
+        猜测题目正确形式应为：
+        \begin{itemize}
+            \item (1) $M(s) = e^{2(e^{s - 1} - 1)}$
+            \item (2) $M(s) = e^{e(e^s - 1)}$
+        \end{itemize}
+        \subsection*{(a)}
+            第一个不是矩母函数。根据矩母函数的定义$M_X(s) = E[e^{sX}]$,$M_X(0) = E[1] = 1$，
+            很明显第一个函数不满足这个条件。
+        \subsection*{(b)}
+            第二个矩母函数为泊松分布的矩母函数的形式，$\lambda = 2$，所以$P(X = 0) = e^{-2}$
+    \section*{33.}
+        不难看出加号两侧是指数分布的矩母函数的形式，所以概率密度函数：
+        $$f_X(x) = \left\{
+            \begin{array}{lcr}
+                \frac{1}{3} \times 2e^{-2x} + \frac{2}{3} \times 3e^{-3x} & & x \geq 0\\
+                0 & & otherwise
+            \end{array}
+        \right.$$
+    \section*{34.}
+        利用卷积计算的分布列：
+        $$p(x) = \left\{
+            \begin{array}{lcr}
+                1 - p_1 - p_2 - p_3 + p_1p_2 + p_1p_3 + p_2p_3 - p_1p_2p_3 & & x = 0\\
+                3p_1p_2p_3 + p_1 + p_2 + p_3 - 2(p_1p_2 + p_1p_3 + p_2p_3) & & x = 1\\
+                p_1p_2 + p_1p_3 + p_2p_3 - 3p_1p_2p_3 & & x = 2\\
+                p_1p_2p_3 & & x = 3
+            \end{array}
+        \right.$$
+
+        对于某一个球员，其矩母函数为$M_{X_i}(s) = 1 - p_i + p_ie^s$，
+        又因为独立随机变量的和的矩母函数是和项的矩母函数的乘积，
+        所以$M_X(s) = \Pi_{i = 1}^{3}(1 - p_i + p_ie^s)$，展开后去掉$e^{sk}$，
+        形式与上面的分布列是一样的。
+    \section*{35.}
+        由$M(0) = 1$，可以计算得$c = \frac{2}{9}$，所以$E[X] = \frac{d}{ds}M(s)|_{s = 0} = \frac{37}{18}$；
+        令$\alpha = \frac{e^s}{3}$，那么$M(s) = \frac{c(3 + 4e^2 + 2e^3)}{3(1 - \alpha)} = \frac{2}{27}(3 + 4e^2 + 2e^3)(1 + \alpha + \alpha^2 + \dots)$，
+        所以$p_X(1) = \frac{2}{27}, p_X(0) = \frac{2}{9}$，由条件期望：$E[X|X \ne 0] = \frac{E[X]}{1 - p_X(0)} = \frac{37}{14}$。
+    \section*{36.}
+        \subsection*{(a)}
+            由题意得：$M_{XY}(s) = \frac{1}{3}M_Y(s) = \frac{1}{3}\frac{s}{2 - s}$，
+            $M_{(1 - X)Z} = \frac{2}{3}M_Z(s) = \frac{2}{3}e^{3(e^s - 1)}$，所以$M_{U}(s) = \frac{2s}{9(2 - s)}e^{3(e^s - 1)}$。
+        \subsection*{(b)}
+            $M_{2Z + 3}(s) = M_{2Z}(s)M_{3}(s) = e^{3(e^{2s} - 1) + 3s}$
+        \subsection*{(c)}
+            $M_{Y + Z}(s) = \frac{s}{2 - s}e^{3(e^s - 1)}$
+    \section*{37.}
+        TODO:
+    \section*{38.}
+        略。
+    \section*{39.}
+        略。
+    \section*{40.}
+        略。
 \end{document}
