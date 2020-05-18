@@ -30,16 +30,12 @@
         $M(s) = \int_{0}^{\infty}\lambda e^{-\lambda x + sx}dx = \frac{-\lambda}{s - \lambda}$，
         所以$E[X^3] = \frac{6}{\lambda^4}, E[X^4] = \frac{24}{\lambda^5},\\ E[X^5] = \frac{120}{\lambda^6}$
     \section*{32.}
-        猜测题目正确形式应为：
-        \begin{itemize}
-            \item (1) $M(s) = e^{2(e^{s - 1} - 1)}$
-            \item (2) $M(s) = e^{e(e^s - 1)}$
-        \end{itemize}
         \subsection*{(a)}
-            第一个不是矩母函数。根据矩母函数的定义$M_X(s) = E[e^{sX}]$,$M_X(0) = E[1] = 1$，
-            很明显第一个函数不满足这个条件。
+            第二个不是矩母函数。根据矩母函数的定义$M_X(s) = E[e^{sX}]$,$M_X(0) = E[1] = 1$，
+            很明显第二个函数不满足这个条件。
         \subsection*{(b)}
-            第二个矩母函数为泊松分布的矩母函数的形式，$\lambda = 2$，所以$P(X = 0) = e^{-2}$
+            设N为满足$\lambda = 2$的泊松分布的随机变量，Y为满足$\lambda = 1$的泊松分布的随机变量，
+            所以X为N个Y之和（见4.5节），$P(X = 0) = \sum_{n = 0}^{\infty}p_N(n)p_Y(0)\\ = e^{-1}$
     \section*{33.}
         不难看出加号两侧是指数分布的矩母函数的形式，所以概率密度函数：
         $$f_X(x) = \left\{

@@ -1,0 +1,39 @@
+\documentclass[UTF8]{report}
+\usepackage{ctex}
+
+\begin{document}
+    \section*{41.}
+        \subsection*{(a)}
+            因为$X_i$服从$[0, 1]$上的均匀分布，所以$M_X(s) = \frac{e^s - 1}{s}$，
+            由于人数服从泊松分布，所以$M_N(s) = e^{\lambda(e^s - 1)}$，将$e^s$替换后得到
+            $M_Y(s) = e^{\lambda(\frac{e^s - 1}{s} - 1)}$
+        \subsection*{(b)}
+            由(a)中的矩母函数可得：$E[Y] = \frac{d}{ds}M_Y(s)|_{s = 0} = \frac{\lambda}{2}$
+        \subsection*{(c)}
+            由重期望法则：$E[Y] = E[E[Y|N]] = E[X]E[N] = \frac{\lambda}{2}$，与(b)中的结果一致。
+    \section*{42.}
+        个数服从参数为$\lambda$的泊松分布的情况下，
+        $M_X(s) = e^{\lambda(e^{\frac{\sigma^2s^2}{2}} + \mu s) - 1}$，
+        显然不满足正态分布的矩母函数的形式。
+    \section*{43.}
+        \subsection*{(a)}
+            由全概率定理：
+            $P(X \leq x) =
+            \frac{1}{16}(1 + 4\int_{0}^{x}f_Y(y)dy + 6\int_{0}^{x}f_{2Y}(y)dy + 4\int_{0}^{x}f_{3Y}(y)dy + \int_{0}^{x}f_{4Y}(y)dy)$
+            混合分布的对应的矩母函数为：
+            $M_X(s) = \frac{1}{16}(1 + 4e^{\frac{s^2}{8} + s} + 6e^{\frac{s^2}{4} + 2s} + 4e^{\frac{3s^2}{8} + 3s} + e^{\frac{s^2}{2} + 4s})$，
+            所以超过4分钟的概率为$1 - P(X \leq 4) \approx 0.06$。X不是正态的。
+        \subsection*{(b)}
+            二项分布的矩母函数：$M_N(s) = (\frac{1}{2} + \frac{1}{2}e^s)^4$，用正态分布的矩母函数替换：
+            $M_X(s) = \frac{1}{16}(1 + e^{\frac{s^2}{8}} + s)^4$，展开后与(a)中结果一致。
+    \section*{44.}
+        \subsection*{(a)}
+            $E[N] = E[M]E[K], var(N) = E[M]var(K) + E[K]^2var(M)$
+        \subsection*{(b)}
+            $E[Y] = E[X]E[N] = E[X]E[M]E[K], var(Y) = E[N]var(X) +\\ E[X]^2var(N) = E[M]E[K]var(X) + E[X]^2(E[M]var(K) + E[K]^2var(M))$
+        \subsection*{(c)}
+            由题意得：$E[K] = \mu, E[X] = \frac{1}{\lambda}, E[M] = \frac{1}{p}, var(K) = \mu, var(X) = \frac{1}{\lambda^2}, var(M) = \frac{1 - p}{p^2}$，
+            由(b)中的公式，我们可以得到：$E[Y] = \frac{\mu}{p\lambda}, var(Y) = \frac{\mu}{p\lambda^2} + \frac{\mu p + \mu^2 - \mu^2p}{\lambda^2p^2}$
+    \section*{45.}
+        略。 
+\end{document}
