@@ -1,0 +1,22 @@
+\documentclass[UTF8]{report}
+\usepackage{ctex}
+
+\begin{document}
+    \section*{1.}
+        \subsection*{(a)}
+            因为$\sigma = 1, var(M_n) = \frac{\sigma^2}{n}$，
+            要求$var(M_n) = \frac{\sigma^2}{n} \leq 0.0001$，
+            所以$n \geq 10000$。
+        \subsection*{(b)}
+            由切比雪夫不等式：
+            $P(|X - h| \geq 0.05) \leq \frac{1^2}{0.05^2n} \leq 0.01$，
+            解之得$n \geq 40000$。
+        \subsection*{(c)}
+            令$\sigma = \frac{(b - a)}{2} = 0.3$，
+            则(a)中的不等式变为$\frac{0.09}{n} \leq 0.0001$，解之得$n \geq 900$；
+            (b)中的不等式变为$\frac{0.09}{0.0025n} \leq 0.01$，解之得$n \geq 3600$。
+    \section*{2.}
+        略。
+    \section*{3.}
+        略。
+\end{document}
