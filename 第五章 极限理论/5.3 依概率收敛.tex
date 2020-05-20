@@ -1,0 +1,58 @@
+\documentclass[UTF8]{report}
+\usepackage{ctex}
+
+\begin{document}
+    \section*{5.}
+        由题意得：$f_{X_i}(x) = \left\{
+            \begin{array}{lcr}
+                \frac{1}{2} & & x \in [-1, 1]\\
+                 0 & & otherwise
+            \end{array}
+        \right.$
+        \subsection*{(a)}
+            $Y_n$依概率收敛于0。
+            $$\begin{array}{l}
+                \lim_{n \to \infty}P(|Y_n - a| \geq \epsilon)\\
+                = \lim_{n \to \infty}2P(Y_n \geq \epsilon)\\
+                = P(0 \geq \epsilon)\\
+                = 0
+            \end{array}$$
+
+            利用夹逼定理，容易得出极限值为0。
+        \subsection*{(b)}
+            $Y_n$依概率收敛于0。
+            $$\begin{array}{l}
+                \lim_{n \to \infty}P(|Y_n - a| \geq \epsilon)\\
+                = \lim_{n \to \infty}P(|X_n^n| \geq \epsilon)\\
+                = \lim_{n \to \infty}2P(X_n \geq \epsilon^n)\\
+                = \lim_{n \to \infty}2P(X_n \geq 1)\\
+                = 0
+            \end{array}$$
+
+            不难看出$Y_n$的极限不存在。
+        \subsection*{(c)}
+            $Y_n$依概率收敛于0。
+            $$\begin{array}{l}
+                \lim_{n \to \infty}P(|Y_n - a| \geq \epsilon)\\
+                = \lim_{n \to \infty}2P(Y_n \geq \epsilon)\\
+                = P(0 \geq \epsilon)\\
+                = 0
+            \end{array}$$
+
+            $Y_n$的极限为0。
+        \subsection*{(d)}
+            $Y_n$依概率收敛于0。
+            $$\begin{array}{l}
+                \lim_{n \to \infty}P(|Y_n - a| \geq \epsilon)\\
+                = \lim_{n \to \infty}2P(Y_n \geq \epsilon)\\
+                = \lim_{n \to \infty}P(max\{X_1, X_2, \dots X_n\}) \geq \epsilon)\\
+                = \lim_{n \to \infty}(\frac{1 - \epsilon}{2})^n\\
+                = 0
+            \end{array}$$
+
+            $Y_n$的极限为1。
+    \section*{6.}
+        略。
+    \section*{7.}
+        略。
+\end{document}
