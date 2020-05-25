@@ -1,0 +1,40 @@
+\documentclass[UTF8]{report}
+\usepackage{ctex}
+
+\begin{document}
+    \section*{8.}
+        我们设第i次转动的结果为$X_i$，当转到奇数的时候值为1，偶数时为0。
+        如果轮盘公正，那么$\mu = 0.5, \sigma^2 = 0.25$，
+        则由中心极限定理，转到奇数的次数大于55次的概率为
+        $P(Z_n > x) = P(Z_n > \frac{55 - 100\mu}{10\sigma}) = 1 - P(Z_n \leq 1) = 2 - \Phi(1) \approx 0.1587$
+    \section*{9.}
+        \subsection*{(a)}
+            设第i天内是否死机为$X_i$，当死机发生时记为1，没有发生记为0。
+            由题意得$\mu = 0.95, \sigma^2 = 0.0475$，
+            所以由中心极限定理，至少有45天没有死机的概率为
+            $P(Z_n > \frac{45 - 50\mu}{\sqrt{50}\sigma}) \approx \Phi(1.62) = 0.9474$
+        \subsection*{(b)}
+            由题意得：$\lambda = np = 47.5$，
+            那么$P(Z_n \leq 5) = \sum_{k = 0}^{5}e^{-\lambda}\frac{\lambda^k}{k!} \approx 1$
+    \section*{10.}
+        \subsection*{(a)}
+            $P(Z_n > x) = P(Z_n > \frac{440 - 100\mu}{90}) = 1 - P(Z_n \leq -0.667) = \Phi(0.667) \approx 0.7454$
+        \subsection*{(b)}
+            由题意得：$P(X_1 + \dots + X_n \leq 200 + 5n) = P(X_1 + \dots + X_n \leq \frac{200}{3\sqrt{n}}) \geq 0.95$，
+            所以$\frac{200}{3\sqrt{n}} \geq 1.65$，解得n的最大值为1632。
+        \subsection*{(c)}
+            若恰好220天生产到第1000个，则每天平均需要生产约4.55个；
+            若219天就可以生产到第1000个，则每天平均需要生产约4.57个。
+            所以，由中心极限定理，我们有
+            $P(N \geq 220) \approx 
+            P(4.55 \times 220 \leq S_n \leq 4.57 \times 220) \approx 
+            \Phi(-2.12) - (1 - \Phi(2.22)) = \Phi(2.22) - \Phi(2.12) \approx 0.0038$
+    \section*{11.}
+        不妨令$W_i = X_i - Y_i$，由于$X_i, Y_i$都是$[0, 1]$上的均匀分布，
+        所以$E[W_i] = E[X_i] - E[Y_i] = 0,
+        var(W_i) = var(X_i) + var(Y_i) + 2cov(X_i + Y_i) = 1$。
+        由中心极限定理，原式$P(|W - E[W]| < 0.001) = P(|W| \leq 0.001)
+        = 2P(W \leq 0.001) \approx 2\Phi(0) = 1$。
+    \section*{12.}
+        略。
+\end{document}
